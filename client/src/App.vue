@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <div class="row">
       <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <a class="navbar-brand" href="#">Dashboard</a>
@@ -9,8 +9,9 @@
           <button class="btn-default" @click="getPayments()">Get Payments</button>
         </nav>
       </header>
-
-      <div class ="container-fluid justify-content-center " >
+    </div>
+    <div class="container-fluid">
+      <div class="row">
         <table v-if="response" class="table table-striped table-dark">
           <thead>
             <tr>
@@ -25,7 +26,7 @@
         </table>
       </div>
     </div>
-
+  </div>
 </template>
 
 <script>
@@ -72,8 +73,7 @@ export default {
 </script>
 
 <style>
-
 table {
-  margin-top: 56px
+  margin-top: 56px;
 }
 </style>

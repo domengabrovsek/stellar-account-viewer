@@ -22,7 +22,13 @@ router.get('/public/stellar/payments', cors(), async (req, res, next) => {
 
   const payments =
     readFromFile(filePath)
-      .filter(op => op.type === 'payment');
+      .filter(op => op.type === 'payment')
+      .map((p) => ({
+        created: p.created,
+        amount: p.amount,
+        from: p.from,
+        to: p.to,
+      }));
 
   console.log(`Processed request.`);
   res.send(payments);
